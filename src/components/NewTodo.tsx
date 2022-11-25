@@ -1,8 +1,7 @@
 import React, { useRef } from "react"
-import Todo from '../types/Todo'
 
 interface NewTodoProps {
-    addTodo: (todo: Todo) => void
+    onAddTodo: (todoText: string) => void
 }
 
 const NewTodo: React.FC<NewTodoProps> = (props) => {
@@ -11,7 +10,7 @@ const NewTodo: React.FC<NewTodoProps> = (props) => {
     const todoSubmitHandler = (event: React.FormEvent) => {
         event.preventDefault()
         const enteredText = textInputRef.current!.value
-        props.addTodo({id: 't2', text: enteredText})
+        props.onAddTodo(enteredText)
     }
 
     return <form onSubmit={todoSubmitHandler}>

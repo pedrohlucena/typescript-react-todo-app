@@ -1,3 +1,1 @@
-type Todo = {id: string, text: string}
-
-export default Todo
+export default interface Todo {id: string, text: string}
